@@ -177,7 +177,7 @@ if __name__ == '__main__':
             print(reader.readline())
 
     writer = Writer()
-    writer.copy_open('../lib/cases/HTTP接口用例.xls', '../lib/results/result-HTTP接口用例.xls')
+    writer.copy_open('../lib/HTTP接口用例.xls', '../lib/result-HTTP接口用例.xls')
     sheetname = writer.get_sheets()
     writer.set_sheet(sheetname[0])
     writer.write(1, 1, 'William')
