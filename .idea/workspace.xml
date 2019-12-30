@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c532b33b-5279-429a-a748-ba2c5e4ea632" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/Excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/Excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inter/Http.py" beforeDir="false" afterPath="$PROJECT_DIR$/inter/Http.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inter/interrnner.py" beforeDir="false" afterPath="$PROJECT_DIR$/inter/interrnner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/HTTP接口用例.xls" beforeDir="false" afterPath="$PROJECT_DIR$/lib/HTTP接口用例.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainrunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainrunner.py" afterDir="false" />
-    </list>
+    <list default="true" id="c532b33b-5279-429a-a748-ba2c5e4ea632" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577669721228</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="上传新增内容">
+      <created>1577695144735</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1577695144786</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
