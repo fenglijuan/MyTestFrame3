@@ -9,7 +9,7 @@ class Mysql:
         # 配置mysql参数
         self.mysql_config = {
             'mysqluser': "root",
-            'mysqlpassword': "123456",
+            'mysqlpassword': "flj123456",
             'mysqlport': 3306,
             'mysqlhost': 'localhost',
             'mysqldb': 'test_project',
@@ -69,6 +69,23 @@ class Mysql:
         for sql in self.__read_sql_file(path):
             cursor.execute(sql)
             connect.commit()
+        # res=cursor.execute('select * from userinfo')
+        # print(res)
+        # #表结构
+        # print(cursor.description)
+        # #表中的数据，数据存在元祖中
+        # fet = cursor.fetchall()
+        # print(fet)
+        # #转成列表
+        # search=[]
+        #
+        # for line in fet:
+        #     cols = []
+        #     for col in line:
+        #         cols.append(col)
+        #     search.append(cols)
+        # #print(cols)
+        # print(search)
         # 关闭游标和连接
         cursor.close()
         connect.close()
@@ -76,7 +93,7 @@ class Mysql:
 
 # 调试代码
 if __name__ == '__main__':
-    config.get_config('../lib/conf/conf.txt')
-    # logger.info(config.config)
+    config.get_config('../lib/conf.properties')
+    logger.info(config.config)
     mysql = Mysql()
-    mysql.init_mysql('C:\\Users\\Will\\Desktop\\userinfo.sql')
+    mysql.init_mysql('../lib/userinfo.sql')

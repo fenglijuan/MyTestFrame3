@@ -64,7 +64,7 @@ class Res:
                         totalcount = totalcount + 1
                         # logger.info(line)
                         # 如果通过，则通过数和总通过数均自增
-                        if line[7] == "PASS":
+                        if line[7] == "pass":
                             totalpass += 1
                         else:
                             # 出现了用例执行结果不是PASS的情况，则视为当前分组执行失败。
@@ -96,5 +96,5 @@ class Res:
 
 if __name__ == '__main__':
     res = Res()
-    r = res.get_res('../lib/results/result-HTTP接口用例.xls')
+    r = res.get_res('../lib/result-HTTP接口用例.xls')
     print(r)

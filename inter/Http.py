@@ -1,4 +1,5 @@
-import requests,json,traceback
+import requests,json
+from common.logger import *
 
 class HTTP:
     def __init__(self,writer):
@@ -19,7 +20,8 @@ class HTTP:
             self.writer.write(self.writer.row,7,'pass')
             self.writer.write(self.writer.row, 8, self.url)
         else:
-            print('error:url格式错误')
+            #print('error:url格式错误')
+            logger.error('error:url格式错误')
             self.writer.write(self.writer.row, 7, 'fail')
             self.writer.write(self.writer.row, 8, 'url格式错误')
     def  post(self,url,d=None,j=None):
@@ -40,7 +42,7 @@ class HTTP:
             #print(self.params)
         res=self.session.post(url,d,j,verify=False)
         self.result=res.content.decode('utf8')
-        print(self.result)
+        #print(self.result)
         try:
             self.jsonres=json.loads(self.result)
             self.writer.write(self.writer.row, 7, 'pass')
@@ -72,7 +74,8 @@ class HTTP:
             self.writer.write(self.writer.row, 7, 'pass')
             self.writer.write(self.writer.row, 8, str(self.session.headers))
         except Exception as e:
-            print('没有'+key+'这个键的header存在')
+            logger.error('没有'+key+'这个键的header存在')
+            logger.exception(e)
             self.writer.write(self.writer.row, 7, 'fail')
             self.writer.write(self.writer.row, 8, str(self.session.headers))
     def addheader(self,key,value):
@@ -100,11 +103,11 @@ class HTTP:
         except Exception as e:
             pass
         if res==str(value):
-            print('pass')
+            logger.info('pass')
             self.writer.write(self.writer.row, 7, 'pass')
             self.writer.write(self.writer.row, 8, res)
         else:
-            print('fail')
+            logger.info('fail')
             self.writer.write(self.writer.row, 7, 'fail')
             self.writer.write(self.writer.row, 8,'实际结果：'+res+';预期结果：'+value)
     def assertequals2(self,key,value,mothedname):
@@ -136,8 +139,8 @@ class HTTP:
             self.writer.write(self.writer.row, 7, 'pass')
             self.writer.write(self.writer.row, 8, str(self.params[p]))
         except Exception as e:
-            print("warning:保存参数失败!，没有"+key+"这个键")
-            print(traceback.format_exc())
+            logger.error("保存参数失败!，没有"+key+"这个键")
+            logger.exception(e)
             self.writer.write(self.writer.row, 7, 'fail')
             self.writer.write(self.writer.row, 8, str(self.jsonres))
 
@@ -151,8 +154,8 @@ class HTTP:
             try:
                 param[list2[0]]=list2[1]
             except Exception as e:
-                print('warning:参数格式不标准')
-                print(traceback.format_exc())
+                logger.error('参数格式不标准')
+                logger.exception(e)
         return param
     def __get_param2(self,s):
         s=eval(s)

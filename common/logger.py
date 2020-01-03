@@ -11,8 +11,8 @@ path = '.'
 logger = None
 # create logger
 # 这里可以修改开源模块的日志等级
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-c = logging.FileHandler(path + "/lib/logs/all.log", mode='a', encoding='utf8')
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+c = logging.FileHandler(path + "/lib/all.log", mode='a', encoding='utf8')
 logger = logging.getLogger('frame log')
 logger.setLevel(logging.DEBUG)
 c.setFormatter(formatter)
@@ -70,4 +70,6 @@ def exception(e):
 # 调试
 if __name__ == '__main__':
     debug('test')
+    error('error')
+    warn('warnning')
 

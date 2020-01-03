@@ -1,5 +1,6 @@
 from inter.Http import HTTP
 import inspect
+from common import config
 # http=HTTP()
 # http.post('http://testingedu.com.cn/inter/HTTP/auth')
 # http.assertequals('status','200')
@@ -25,16 +26,18 @@ import inspect
 # http.post('http://testingedu.com.cn/inter/HTTP/logout')
 # http.assertequals('status','200')
 
-http=HTTP()
-func = getattr(http, 'post')
-func('http://testingedu.com.cn/inter/HTTP/auth')
-args=inspect.getfullargspec(func).__str__()
-print(args)
-print(func.__doc__)
-args=args[args.find('args=')+5:args.rfind(', varargs=')]
-print(args)
-args=eval(args)
-args.remove('self')
-print(args)
-print(len(args))
+# http=HTTP()
+# func = getattr(http, 'post')
+# func('http://testingedu.com.cn/inter/HTTP/auth')
+# args=inspect.getfullargspec(func).__str__()
+# print(args)
+# print(func.__doc__)
+# args=args[args.find('args=')+5:args.rfind(', varargs=')]
+# print(args)
+# args=eval(args)
+# args.remove('self')
+# print(args)
+# print(len(args))
+config.get_config('../lib/conf.properties')
+print(config.config)
 

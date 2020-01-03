@@ -1,5 +1,9 @@
 from common.Excel import *
 from inter.Http import *
+from common.excelresult import Res
+from common import config
+from common.test import get_config1
+from common.mail import *
 import inspect
 '''这是自动化框架的主代码运行入口
 powered by fenglj   at 2019/12/19'''
@@ -61,3 +65,25 @@ for sheet in sheetname:
         line=reader.readline()
         runcase(line,http)
 writer.save_close()
+#解析结果，得到报告数据
+res = Res()
+r = res.get_res('./lib/result-HTTP接口用例.xls')
+logger.info(r)
+#读取配置
+config.get_config('./lib/conf.properties')
+logger.info(config.config)
+#修改邮件数据
+html=config.config['mailtxt']
+html=html.replace('title',r['title'])
+if r['status']=='Fail':
+    html=html.replace('#00d800','red')
+html=html.replace('status',r['status'])
+html=html.replace('runtype',r['runtype'])
+html=html.replace('passrate',r['passrate']+'%')
+html=html.replace('casecount',r['casecount'])
+html=html.replace('starttime',r['starttime'])
+html=html.replace('endtime',r['endtime'])
+#发送邮件
+
+mail = Mail()
+mail.send(html)
