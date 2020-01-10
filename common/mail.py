@@ -54,7 +54,9 @@ class Mail:
         msg = MIMEMultipart()
         msg.attach(MIMEText(text, 'html', self.mail_info['mail_encoding']))
         msg['Subject'] = Header(self.mail_info['mail_subject'], self.mail_info['mail_encoding'])
-        msg['from'] = self.mail_info['from']
+        #msg['from'] = self.mail_info['from']
+        #昵称
+        msg['from']='fenglj'
 
         logger.debug(self.mail_info)
         logger.debug(text)

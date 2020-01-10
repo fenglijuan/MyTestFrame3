@@ -1,5 +1,5 @@
 from inter.Http import HTTP
-import inspect
+import inspect,json,jsonpath
 from common import config
 # http=HTTP()
 # http.post('http://testingedu.com.cn/inter/HTTP/auth')
@@ -38,6 +38,10 @@ from common import config
 # args.remove('self')
 # print(args)
 # print(len(args))
-config.get_config('../lib/conf.properties')
-print(config.config)
+# config.get_config('../lib/conf.properties')
+# print(config.config)
 
+s='{"status":"0","t":"1578276241940","set_cache_time":"","data":[{"location":"澳大利亚","titlecont":"IP地址查询","origip":"1.2.3.4","origipquery":"1.2.3.4","showlamp":"1","showLikeShare":1,"shareImage":1,"ExtendedLocation":"","OriginQuery":"1.2.3.4","tplt":"ip","resourceid":"6006","fetchkey":"1.2.3.4","appinfo":"","role_id":0,"disp_type":0}]}'
+jsons=json.loads(s)
+res=jsonpath.jsonpath(jsons,'$.data.[0].location')[0]
+print(res)

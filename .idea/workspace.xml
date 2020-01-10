@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c532b33b-5279-429a-a748-ba2c5e4ea632" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/conf.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/userinfo.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inter/testsoap.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inter/zhihu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/REST.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/SOAP.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/百度IP接口用例.xls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/excelresult.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/excelresult.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/mysql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/txt.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/txt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inter/Http.py" beforeDir="false" afterPath="$PROJECT_DIR$/inter/Http.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inter/interrnner.py" beforeDir="false" afterPath="$PROJECT_DIR$/inter/interrnner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/result-HTTP接口用例.xls" beforeDir="false" afterPath="$PROJECT_DIR$/lib/result-HTTP接口用例.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/conf.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib/conf.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainrunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainrunner.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,27 +97,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mail" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MyTestFrame3" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/mail.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="mainrunner" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyTestFrame3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,7 +118,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mysql" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="testsoap" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyTestFrame3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,11 +126,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/inter" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/mysql.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/inter/testsoap.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="zhihu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyTestFrame3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/inter" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/inter/zhihu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,10 +163,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.mainrunner" />
-        <item itemvalue="Python.excelresult" />
-        <item itemvalue="Python.mail" />
-        <item itemvalue="Python.mysql" />
+        <item itemvalue="Python.testsoap" />
+        <item itemvalue="Python.zhihu" />
         <item itemvalue="Python.interrnner" />
+        <item itemvalue="Python.excelresult" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577695981877</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="上传新增内容">
+      <created>1578043084869</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1578043084869</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">

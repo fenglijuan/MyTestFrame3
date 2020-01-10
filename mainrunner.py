@@ -4,7 +4,8 @@ from common.excelresult import Res
 from common import config
 from common.test import get_config1
 from common.mail import *
-import inspect
+import inspect,jsonpath,datetime
+from common.mysql import Mysql
 '''这是自动化框架的主代码运行入口
 powered by fenglj   at 2019/12/19'''
 # print('该功能暂未实现')
@@ -46,14 +47,30 @@ def runcase(line,f):
 #         return
 
 reader = Reader()
-reader.open_excel('./lib/HTTP接口用例.xls')
+casename="REST"
+reader.open_excel('./lib/'+casename+'.xls')
 sheetname = reader.get_sheets()
-writer = Writer()
-writer.copy_open('./lib/HTTP接口用例.xls', './lib/result-HTTP接口用例.xls')
-#sheetname = writer.get_sheets()
-http=HTTP(writer)
-#writer.write(1, 1, 'William')
+#读取配置
+config.get_config('./lib/conf.properties')
+logger.info(config.config)
+#数据库初始化
+# mysql = Mysql()
+# mysql.init_mysql('./lib/userinfo.sql')
 
+writer = Writer()
+writer.copy_open('./lib/'+casename+'.xls', './lib/result-'+casename+'.xls')
+#sheetname = writer.get_sheets()
+
+#writer.write(1, 1, 'William')
+writer.set_sheet(sheetname[0])
+writer.write(1,3,str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+reader.readline()
+http=None
+casetype=reader.readline()[1]
+if  casetype=='HTTP':
+    http=HTTP(writer)
+if  casetype=='SOAP':
+    http=SOAP(writer)
 for sheet in sheetname:
     # 设置当前读取的sheet页面
     reader.set_sheet(sheet)
@@ -64,14 +81,14 @@ for sheet in sheetname:
         writer.row=i
         line=reader.readline()
         runcase(line,http)
+writer.set_sheet(sheetname[0])
+writer.write(1,4,datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 writer.save_close()
 #解析结果，得到报告数据
 res = Res()
-r = res.get_res('./lib/result-HTTP接口用例.xls')
+r = res.get_res('./lib/result-'+casename+'.xls')
 logger.info(r)
-#读取配置
-config.get_config('./lib/conf.properties')
-logger.info(config.config)
+
 #修改邮件数据
 html=config.config['mailtxt']
 html=html.replace('title',r['title'])
