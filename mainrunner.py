@@ -1,6 +1,8 @@
 from common.Excel import *
 from inter.Http import *
+from web.webautotool import Broswer
 from common.excelresult import Res
+from app.App import APP
 from common import config
 from common.test import get_config1
 from common.mail import *
@@ -47,7 +49,7 @@ def runcase(line,f):
 #         return
 
 reader = Reader()
-casename="REST"
+casename="App"
 reader.open_excel('./lib/'+casename+'.xls')
 sheetname = reader.get_sheets()
 #读取配置
@@ -71,6 +73,10 @@ if  casetype=='HTTP':
     http=HTTP(writer)
 if  casetype=='SOAP':
     http=SOAP(writer)
+if  casetype=='WEB':
+    http=Broswer(writer)
+if  casetype=='APP':
+    http=APP(writer)
 for sheet in sheetname:
     # 设置当前读取的sheet页面
     reader.set_sheet(sheet)
