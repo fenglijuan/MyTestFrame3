@@ -48,7 +48,7 @@ def runcase(line,f):
 #         return
 
 reader = Reader()
-casename="App"
+casename="HTTP接口用例"
 reader.open_excel('./lib/'+casename+'.xls')
 sheetname = reader.get_sheets()
 #读取配置
