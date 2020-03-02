@@ -4,7 +4,6 @@ from web.webautotool import Broswer
 from common.excelresult import Res
 from app.App import APP
 from common import config
-from common.test import get_config1
 from common.mail import *
 import inspect,jsonpath,datetime
 from common.mysql import Mysql
